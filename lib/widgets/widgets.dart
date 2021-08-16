@@ -24,20 +24,28 @@ class LinkedOutlinedButton extends StatelessWidget {
   final msg;
   final routeTo;
   const LinkedOutlinedButton(this.icon, this.msg, this.routeTo);
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 275,
-      child: OutlinedButton.icon(
-        icon: Icon(
-          icon,
-          color: Colors.white,
-        ),
-        label: LinkedButtonText(msg),
+      width: 300,
+      child: OutlinedButton(
         onPressed: () {
           print('button pressed');
           // TODO: Route to destination page
         },
+        child: Stack(
+          alignment: Alignment.centerLeft,
+          children: <Widget>[
+            Icon(icon),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                OutlinedLinkedButtonText(msg),
+              ],
+            ),
+          ],
+        ),
         style: OutlinedButton.styleFrom(
           side: BorderSide(
             width: 1.0,
@@ -48,6 +56,27 @@ class LinkedOutlinedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(32.0),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MiscButtons extends StatelessWidget {
+  final msg;
+  final routeTo;
+  const MiscButtons(this.msg, this.routeTo);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 300,
+      child: TextButton(
+        style: ButtonStyle(splashFactory: NoSplash.splashFactory),
+        onPressed: () => {
+          print('other button clicked'),
+          // TODO: Route to destination page
+        },
+        child: LinkedButtonText(msg),
       ),
     );
   }

@@ -14,11 +14,14 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Container(
-            child: CompanyName('Serveezy'),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: CompanyName('Serveezy'),
+            ),
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 150.0),
+              padding: const EdgeInsets.only(top: 200.0),
               child: LinkedOutlinedButton(
                 Icons.mail,
                 'LOGIN WITH EMAIL',
@@ -28,7 +31,7 @@ class LoginPage extends StatelessWidget {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 250.0),
+              padding: const EdgeInsets.only(top: 300.0),
               child: LinkedOutlinedButton(
                 Icons.phone,
                 'LOGIN WITH PHONE',
@@ -38,10 +41,19 @@ class LoginPage extends StatelessWidget {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 350.0),
+              padding: const EdgeInsets.only(top: 400.0),
               child: LinkedOutlinedButton(
                 Icons.facebook_outlined,
                 'LOGIN WITH FACEBOOK',
+                '',
+              ),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 475.0),
+              child: MiscButtons(
+                'Trouble logging in?',
                 '',
               ),
             ),

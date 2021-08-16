@@ -12,8 +12,24 @@ class CompanyName extends StatelessWidget {
         msg,
         textAlign: TextAlign.center,
         style: GoogleFonts.oleoScript(
-          height: 2.5,
           fontSize: 100.0,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
+class OutlinedLinkedButtonText extends StatelessWidget {
+  final msg;
+  const OutlinedLinkedButtonText(this.msg);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text(
+        msg,
+        style: GoogleFonts.inconsolata(
+          fontSize: 20.0,
           color: Colors.white,
         ),
       ),
@@ -24,13 +40,14 @@ class CompanyName extends StatelessWidget {
 class LinkedButtonText extends StatelessWidget {
   final msg;
   const LinkedButtonText(this.msg);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Text(
         msg,
         style: GoogleFonts.inconsolata(
-          fontSize: 20.0,
+          fontSize: 15.0,
           color: Colors.white,
         ),
       ),
