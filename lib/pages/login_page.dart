@@ -10,13 +10,22 @@ class LoginPage extends StatelessWidget {
         children: <Widget>[
           Container(
             child: new BackgroundImageWidget(
-              "assets/images/login_background.jpeg",
+              'assets/images/login_background.jpeg',
             ),
           ),
           Container(
             child: Padding(
               padding: const EdgeInsets.only(top: 100.0),
               child: CompanyName('Serveezy'),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 95.0),
+              child: MiscButtons(
+                'By signing in, you agree to our Terms of Use. Visit our Privacy Policy and Cookies Policy for more information.',
+                '',
+              ),
             ),
           ),
           Center(
@@ -53,7 +62,7 @@ class LoginPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 475.0),
               child: MiscButtons(
-                'Trouble logging in?',
+                'Trouble Signing In?',
                 '',
               ),
             ),

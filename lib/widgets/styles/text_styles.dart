@@ -46,6 +46,7 @@ class LinkedButtonText extends StatelessWidget {
     return Container(
       child: Text(
         msg,
+        textAlign: TextAlign.center,
         style: GoogleFonts.inconsolata(
           fontSize: 15.0,
           color: Colors.white,
