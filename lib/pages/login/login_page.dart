@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serveezy/pages/login/login_page_phone.dart';
 import 'package:serveezy/widgets/widgets.dart';
 import 'package:serveezy/widgets/styles/text_styles.dart';
 
@@ -9,58 +10,54 @@ class LoginPage extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Container(
-            child: new BackgroundImageWidget(
-              'assets/images/login_background.jpeg',
+            child: BackgroundImageWidget(
+              'assets/images/login_background_orange.jpeg',
             ),
           ),
           Container(
             child: Padding(
-              padding: const EdgeInsets.only(top: 100.0),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.1),
               child: CompanyName('Serveezy'),
             ),
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 95.0),
-              child: MiscButtons(
-                'By signing in, you agree to our Terms of Use. Visit our Privacy Policy and Cookies Policy for more information.',
-                '',
-              ),
-            ),
-          ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 200.0),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.25),
               child: LinkedOutlinedButton(
-                Icons.mail,
-                'LOGIN WITH EMAIL',
+                Icons.mail_rounded,
+                'SIGN IN WITH EMAIL',
                 '',
               ),
             ),
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 300.0),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.37),
               child: LinkedOutlinedButton(
-                Icons.phone,
-                'LOGIN WITH PHONE',
+                Icons.facebook_rounded,
+                'SIGN IN WITH FACEBOOK',
                 '',
               ),
             ),
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 400.0),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.49),
               child: LinkedOutlinedButton(
-                Icons.facebook_outlined,
-                'LOGIN WITH FACEBOOK',
-                '',
+                Icons.phone_iphone_rounded,
+                'SIGN IN WITH PHONE NUMBER',
+                LoginPagePhone(),
               ),
             ),
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 475.0),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.65),
               child: MiscButtons(
                 'Trouble Signing In?',
                 '',

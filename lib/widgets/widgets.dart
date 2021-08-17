@@ -24,15 +24,16 @@ class LinkedOutlinedButton extends StatelessWidget {
   final msg;
   final routeTo;
   const LinkedOutlinedButton(this.icon, this.msg, this.routeTo);
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300,
+      width: MediaQuery.of(context).size.width * 0.85,
       child: OutlinedButton(
         onPressed: () {
-          print('button pressed');
-          // TODO: Route to destination page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => routeTo),
+          );
         },
         child: Stack(
           alignment: Alignment.centerLeft,
@@ -47,6 +48,7 @@ class LinkedOutlinedButton extends StatelessWidget {
           ],
         ),
         style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.transparent,
           side: BorderSide(
             width: 1.0,
             color: Colors.white,
@@ -65,18 +67,65 @@ class MiscButtons extends StatelessWidget {
   final msg;
   final routeTo;
   const MiscButtons(this.msg, this.routeTo);
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300,
+      width: MediaQuery.of(context).size.width,
       child: TextButton(
         style: ButtonStyle(splashFactory: NoSplash.splashFactory),
         onPressed: () => {
           print('other button clicked'),
-          // TODO: Route to destination page
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => routeTo,
+            ),
+          ),
         },
         child: LinkedButtonText(msg),
+      ),
+    );
+  }
+}
+
+class CustomBackButton extends StatelessWidget {
+  final routeTo;
+  const CustomBackButton(this.routeTo);
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      padding: EdgeInsets.symmetric(
+        vertical: MediaQuery.of(context).size.width * 0.1,
+      ),
+      onPressed: () => {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => routeTo,
+          ),
+        ),
+      },
+      icon: Icon(
+        Icons.arrow_back_ios_new_rounded,
+      ),
+    );
+  }
+}
+
+class SeparatorBar extends StatelessWidget {
+  final heightRatioNum;
+  final size;
+  const SeparatorBar(this.heightRatioNum, this.size);
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: heightRatioNum,
+      child: new Center(
+        child: new Container(
+          margin: new EdgeInsetsDirectional.only(start: size, end: size),
+          height: 5.0,
+          color: Colors.black54,
+        ),
       ),
     );
   }
